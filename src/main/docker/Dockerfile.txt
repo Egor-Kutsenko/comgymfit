@@ -1,0 +1,7 @@
+FROM dockerfile/java:oracle-java8
+
+VOLUME /tmp
+ADD com.gym.fit.jar /opt/com.gym.fit/
+EXPOSE 8080
+WORKDIR /opt/com.gym.fit/
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-Xms512m", "-Xmx1g", "-jar", "com.gym.fit.jar"]
